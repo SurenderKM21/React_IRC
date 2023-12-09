@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+    <style>
+        body {
+            background: #FF8008;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            height: 100vh;
+            margin: 0;
+        }
+
+        .topnav {
+
+  background-color: #ef8533;
+  width:100%;
+  /* overflow: hidden; */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #6d3707;
+  color: rgb(244, 241, 241);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #e08f0c;
+  color: white;
+}
+        form {
+            width: 45vh;
+            background-color: #f2b25e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            margin-top: 20px;
+            box-shadow:
+  4.5px 4.5px 3.6px rgba(0, 0, 0, 0.08),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.115),
+  30.1px 30.1px 24.1px rgba(0, 0, 0, 0.15),
+  100px 100px 80px rgba(0, 0, 0, 0.23)
+;
+        }
+
+        h1 {
+            color: #eee3e3;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #65c3eb;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 2s;
+        }
+
+        input[type="submit"] {
+            background-color: #d47f00;
+            color: #f6e7e7;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ea763b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    <form onsubmit="disp()">
+        <h1>REGISTER</h1>
+
+        <input type="text" placeholder="Username" id="uname">
+        <input type="password" placeholder="Password" id="pass">
+        <input type="password" placeholder="Confirm Password" id="pass2">
+
+        <input type="tel" placeholder="Number" id="num1">
+        <input type="number" placeholder="Age" id="num2">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    function disp() {
+        if (document.getElementById("pass2").value ==
+            document.getElementById("pass").value)
+            alert("Matching");
+        else alert("Mismatch");
+        if (confirm("Are you ok") == true) alert("OK");
+        else alert("Take care");
+    }
+</script>
+
+</html>
