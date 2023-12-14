@@ -23,7 +23,10 @@ backdrop-filter: blur(13.3px);
 border: 1px solid rgba(255, 255, 255, 1);
             /* opacity:0.5; */
             width: 35vh;
-            padding:50px;
+            padding-bottom:30px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-top:10px;
             display: flex;
             flex-direction: column;
             align-items: center;
