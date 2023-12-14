@@ -3,7 +3,7 @@
 {
     margin-top: 0px;
     background-repeat: no-repeat;
-    background-image: url(C:\Users\senth\OneDrive\Documents\GitHub\React_IRC\Project\sims\src\assets\images\bg4.jpeg);
+    background-image: url(C:\Users\senth\OneDrive\Documents\GitHub\React_IRC\Project\sims\src\assets\images\bg10.jpg);
     background-size: cover;
     height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -43,6 +43,7 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
   } */
      
   h1{
+    transition: 3s;
     text-align: center;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -50,27 +51,19 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
     font-style: italic;
     text-shadow:
 4.5px 4.5px 3.6px rgba(238, 163, 13, 0.712),
-12.5px 12.5px 10px rgba(178, 115, 8, 0.81),
+12.5px 1.5px 10px rgba(221, 113, 12, 0.81),
 30.1px 30.1px 24.1px rgba(215, 181, 27, 0.83),
 100px 100px 80px rgba(247, 21, 21, 0.23)
 ;
   }
   #title{
     text-align: left;
-    padding-left: 600px;
+    padding-left: 550px;
     padding-top: 0px;
     font-style: italic;
     font-size: 2cm;
     /* overflow: hidden; */
   }
-  /* img
-  {
-    width:50px;
-    height: 50px;
-    border-radius: 3px;
-    padding-left:250px;
-    padding-top:50px ;
-  } */
   
   .container {
     display: flex;
