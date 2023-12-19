@@ -1,0 +1,504 @@
+<style>
+    /* //Generic */
+:root {
+  --color: #fb4b02;
+  --dark-color: #e51800;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-width: 350px;
+  min-height: 110vh;
+  margin: 0;
+  font-family: -apple-system, sans-serif;
+  background-color: #fff;
+}
+
+/* // Demo content */
+.introSection {
+  width: 100%;
+  max-width: 768px;
+  padding: 60px 15px;
+  margin: 0 auto;}
+  h1 {
+    font-size: 40px;
+    line-height: 1.4;
+    text-align: center;
+  }
+   p {
+    margin: 30px;
+    text-align: center;
+    line-height: 1.8;
+  }
+  
+  /* // Skeleton Demo */
+  .skeleton-box {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: #DDDBDD;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(#fff, 0) 0,
+        rgba(#fff, 0.2) 20%,
+        rgba(#fff, 0.5) 60%,
+        rgba(#fff, 0)
+      );
+      animation: shimmer 5s infinite;
+      content: '';
+    }
+
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .blog-post {
+    &__headline {
+      font-size: 1.25em;
+      font-weight: bold;
+    }
+
+    &__meta {
+      font-size: 0.85em;
+      color: #6b6b6b;
+    }
+  }
+
+  .o-media {
+    display: flex;
+
+    &__body {
+      flex-grow: 1;
+      margin-left: 1em;
+    }
+  }
+
+  .o-vertical-spacing {
+    > * + * {
+      margin-top: 0.75em;
+    }
+
+    &--l { > * + * {
+        margin-top: 2em;
+      }
+    }
+  }
+
+
+/* // Footer */
+.copyright {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  transform: translateX(-50%);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  /* // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #000;
+    transition: .25s;
+    &:hover {
+      color: var(--color);
+    }
+  }
+}
+
+/* // Sidebar */
+.sidebar {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+}
+
+/* // Hamburger Button */
+.hamburgerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--dark-color);
+  }
+  /* //Hamburger Icon */
+  .hamburgerIcon {
+    width: 50%;
+    position: relative;
+    .hamburgerLine {
+      height: 3px;
+      border-radius: 2px;
+      background-color: #fff;
+      &:not(:first-child):not(:last-child) {
+        transform: scaleX(0);
+        animation-name: hamburger;
+        animation-duration: 0.15s;
+        animation-delay: 0.15s;
+      }
+      &,
+      &:first-child,
+      &:last-child {
+        animation-fill-mode: forwards;
+      }
+      &:first-child,
+      &:last-child {
+        position: absolute;
+        width: 100%;
+        transform-origin: 50%;
+        transition: all 0.1s ease-out;
+        animation-duration: 0.3s;
+      }
+      &:first-child {
+        top: 0;
+        transform: rotate(45deg);
+        animation-name: hamburgerFirst;
+      }
+      &:last-child {
+        top: 0;
+        transform: rotate(-45deg);
+        animation-name: hamburgerLast;
+      }
+    }
+    &.hamburgerOpen {.hamburgerLine {
+        &:not(:first-child):not(:last-child) {
+          animation-name: hamburgerOpen;
+          transform: scaleX(100%);
+        }
+
+        &:first-child {
+          top: -10px;
+          transform: rotate(0);
+          animation-name: hamburgerFirstOpen;
+        }
+
+        &:last-child {
+          top: 10px;
+          transform: rotate(0);
+          animation-name: hamburgerLastOpen;
+        }
+      }
+    }
+  }
+}
+
+@keyframes hamburger {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hamburgerOpen {
+  0% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes hamburgerFirst {
+  0% {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 0;
+    transform: rotate(0);
+  }
+  100% {
+    top: 10px;
+    transform: rotate(0);
+  }
+}
+
+@keyframes hamburgerLast {
+  0% {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  50% {
+    top: 0;
+    transform: rotate(0);
+  }
+  100% {
+    top: -10px;
+    transform: rotate(0);
+  }
+}
+
+@keyframes hamburgerFirstOpen {
+  0% {
+    top: 10px;
+    transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    transform: rotate(0);
+  }
+  100% {
+    top: 0;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes hamburgerLastOpen {
+  0% {
+    top: -12px;
+    transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    transform: rotate(0);
+  }
+  100% {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+/* // Navigation */
+.navItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background-color: var(--color);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--dark-color);
+    .navItem__text {
+      left: 120%;
+      opacity: 1;
+    }
+  }
+  .navItem__text {
+    color: var(--color);
+    position: absolute;
+    left: 105%;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+    font-size: 18px;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+  }
+  svg {
+    color: #fff;
+    stroke-width: 2.5;
+    width: 26px;
+    height: 26px;
+    path {
+      fill: #fff;
+    }
+  }
+}
+
+/* // Navigation Active */
+.navOpen {
+  .navItem {
+    &:first-child {
+      top: 60px;
+      transition-duration: 0.15s;
+      z-index: -1;
+    }
+    &:nth-child(2) {
+      top: calc(60px * 2);
+      transition-duration: 0.3s;
+      z-index: -2;
+    }
+    &:nth-child(3) {
+      top: calc(60px * 3);
+      transition-duration: 0.45s;
+      z-index: -3;
+    }
+    &:nth-child(4) {
+      top: calc(60px * 4);
+      transition-duration: 0.6s;
+      z-index: -4;
+    }
+    &:last-child {
+      top: calc(60px * 5);
+      transition-duration: 0.75s;
+      z-index: -5;
+    }
+  }
+}
+</style>
+<script>
+    const hamburgerButton = document.querySelector(".hamburgerButton");
+const hamburgerIcon = document.querySelector(".hamburgerIcon");
+const nav = document.querySelector(".nav");
+
+window.onload = function() {
+  hamburgerButton.classList.add("open");
+  hamburgerIcon.classList.add("hamburgerOpen");
+  nav.classList.add("navOpen");
+}
+
+hamburgerButton.onclick = function() {
+  hamburgerIcon.classList.toggle("hamburgerOpen");
+  nav.classList.toggle("navOpen");
+}
+</script>
+<main class="introSection">
+    <ul class="o-vertical-spacing o-vertical-spacing--l">
+      <li class="blog-post o-media">
+        <div class="o-media__figure">
+          <span class="skeleton-box" style="width:100px;height:80px;"></span>
+        </div>
+        <div class="o-media__body">
+          <div class="o-vertical-spacing">
+            <h3 class="blog-post__headline">
+              <span class="skeleton-box" style="width:55%;"></span>
+            </h3>
+            <p>
+              <span class="skeleton-box" style="width:80%;"></span>
+              <span class="skeleton-box" style="width:90%;"></span>
+              <span class="skeleton-box" style="width:83%;"></span>
+              <span class="skeleton-box" style="width:80%;"></span>
+            </p>
+            <div class="blog-post__meta">
+              <span class="skeleton-box" style="width:70px;"></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="blog-post o-media">
+        <div class="o-media__figure">
+          <span class="skeleton-box" style="width:100px;height:80px;"></span>
+        </div>
+        <div class="o-media__body">
+          <div class="o-vertical-spacing">
+            <h3 class="blog-post__headline">
+              <span class="skeleton-box" style="width:55%;"></span>
+            </h3>
+            <p>
+              <span class="skeleton-box" style="width:80%;"></span>
+              <span class="skeleton-box" style="width:90%;"></span>
+              <span class="skeleton-box" style="width:83%;"></span>
+              <span class="skeleton-box" style="width:80%;"></span>
+            </p>
+            <div class="blog-post__meta">
+              <span class="skeleton-box" style="width:70px;"></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="blog-post o-media">
+        <div class="o-media__figure">
+          <span class="skeleton-box" style="width:100px;height:80px;"></span>
+        </div>
+        <div class="o-media__body">
+          <div class="o-vertical-spacing">
+            <h3 class="blog-post__headline">
+              <span class="skeleton-box" style="width:55%;"></span>
+            </h3>
+            <p>
+              <span class="skeleton-box" style="width:80%;"></span>
+              <span class="skeleton-box" style="width:90%;"></span>
+              <span class="skeleton-box" style="width:83%;"></span>
+              <span class="skeleton-box" style="width:80%;"></span>
+            </p>
+            <div class="blog-post__meta">
+              <span class="skeleton-box" style="width:70px;"></span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </main>
+  
+  <div class="sidebar">
+    <div class="hamburgerButton">
+      <div class="hamburgerIcon">
+        <div class="hamburgerLine"></div>
+        <div class="hamburgerLine"></div>
+        <div class="hamburgerLine"></div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="" class="navItem">
+        <svg id="fi_3793695" enable-background="new 0 0 469.333 469.333" height="512" viewBox="0 0 469.333 469.333" width="512" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path d="m234.667 213.333c58.91 0 106.667-47.756 106.667-106.667s-47.757-106.666-106.667-106.666-106.667 47.756-106.667 106.667c.071 58.881 47.786 106.596 106.667 106.666zm0-170.666c35.346 0 64 28.654 64 64s-28.654 64-64 64-64-28.654-64-64 28.653-64 64-64z"></path>
+            <path d="m64 469.333c11.782 0 21.333-9.551 21.333-21.333v-85.333c0-35.346 28.654-64 64-64h170.667c35.346 0 64 28.654 64 64v85.333c0 11.782 9.551 21.333 21.333 21.333s21.333-9.551 21.333-21.333v-85.333c-.07-58.881-47.785-106.596-106.666-106.667h-170.667c-58.881.071-106.596 47.786-106.667 106.667v85.333c.001 11.782 9.552 21.333 21.334 21.333z"></path>
+          </g>
+        </svg>
+        <span class="navItem__text">Profile</span>
+      </a>
+      <a href="" class="navItem">
+        <svg id="fi_4230019" enable-background="new 0 0 32 32" height="512" viewBox="0 0 32 32" width="512" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path d="m16 32c-1.6542969 0-3-1.3457031-3-3 0-.796875-.4873047-1.4951172-1.2421875-1.7797852-.2324219-.0869141-.4619141-.1821289-.6894531-.2841797-.7382813-.3325195-1.578125-.1835938-2.1396484.3774414-1.1699219 1.1699219-3.0722656 1.1699219-4.2421875 0-.5664063-.5664063-.8789063-1.3198242-.8789063-2.1210938s.3125-1.5546875.8789063-2.121582c.5605469-.5610352.7089844-1.4013672.3769531-2.1401367-.1015625-.2260742-.1953125-.4541016-.2832031-.6860352-.2851563-.7573241-.9833985-1.2446288-1.7802735-1.2446288-1.6542969 0-3-1.3457031-3-3s1.3457031-3 3-3c.796875 0 1.4951172-.4873047 1.7792969-1.2416992.0888672-.2348633.1826172-.4628906.2841797-.6875.3320313-.7402344.1835938-1.5805664-.3769531-2.1420898-.5664063-.5664063-.8789063-1.3198243-.8789063-2.1210938s.3125-1.5546875.8789063-2.121582c1.1699219-1.1689453 3.0722656-1.1694336 4.2421875.0004883.5615234.5615234 1.4023438.7104492 2.140625.3769531.2255859-.1015625.4550781-.1962891.6884766-.284668.7548827-.2836914 1.2421874-.9819336 1.2421874-1.7788086 0-1.6542969 1.3457031-3 3-3s3 1.3457031 3 3c0 .796875.4873047 1.4951172 1.2421875 1.7788086.2333984.0883789.4628906.1831055.6894531.2851563.7382813.331543 1.578125.184082 2.1396484-.3774414 1.1699219-1.1699219 3.0722656-1.1699219 4.2421875 0 .5664063.5664063.8789063 1.3198242.8789063 2.1210938s-.3125 1.5546875-.8789063 2.121582c-.5605469.5610352-.7089844 1.4013672-.3769531 2.1401367.1015625.2260742.1953125.4541016.2832031.6860352.2851563.7573241.9833985 1.2446288 1.7802735 1.2446288 1.6542969 0 3 1.3457031 3 3s-1.3457031 3-3 3c-.796875 0-1.4951172.4873047-1.7792969 1.2416992-.0888672.2348633-.1826172.4628906-.2841797.6875-.3320313.7402344-.1835938 1.5805664.3769531 2.1420898.5664063.5664063.8789063 1.3198242.8789063 2.1210938s-.3125 1.5546875-.8789063 2.121582c-1.1699219 1.1689453-3.0722656 1.1694336-4.2421875-.0004883-.5615234-.5610352-1.4023438-.7099609-2.140625-.3769531-.2265625.1015625-.4560547.1967773-.6904297.284668-.7529296.2836914-1.2402343.9819336-1.2402343 1.7788086 0 1.6542969-1.3457031 3-3 3zm-5.7441406-7.2416992c.5488281 0 1.1044922.1162109 1.6337891.3540039.1875.0849609.3779297.1635742.5712891.2358398 1.5195312.5727539 2.5390624 2.0400391 2.5390624 3.6518555 0 .5512695.4482422 1 1 1s1-.4487305 1-1c0-1.6118164 1.0195313-3.0791016 2.5371094-3.6508789.1953125-.0732422.3857422-.1518555.5722656-.2363281 1.5048828-.6777344 3.2207031-.3681641 4.3759766.7866211.390625.3896484 1.0234375.3896484 1.4140625 0 .1894531-.1889648.2929688-.4399414.2929688-.7070313s-.1035156-.5180664-.2929688-.706543c-1.1542969-1.1547852-1.4628906-2.8720703-.7871094-4.3754883.0839844-.1879883.1640625-.3808594.2382813-.5756836.5703124-1.5151366 2.0371093-2.5346679 3.649414-2.5346679.5517578 0 1-.4487305 1-1s-.4482422-1-1-1c-1.6123047 0-3.0791016-1.0195313-3.6503906-2.5375977-.0732422-.1918945-.1533203-.3847656-.2373047-.5742188-.6757813-1.5019531-.3671875-3.2192383.7871094-4.3735352.1894531-.1889648.2929688-.4399414.2929688-.7070313s-.1035156-.5180664-.2929688-.706543c-.390625-.390625-1.0234375-.3901367-1.4140625-.0004883-1.1542969 1.1547852-2.8730469 1.4628906-4.375.7871094-.1884766-.0849609-.3789063-.1640625-.5732422-.2368164-1.5175781-.5712889-2.5371094-2.038574-2.5371094-3.6508787 0-.5512695-.4482422-1-1-1s-1 .4487305-1 1c0 1.6123047-1.0195313 3.0795898-2.5371094 3.6508789-.1943359.0727539-.3847656.1518555-.5722656.2363281-1.5058594.6762695-3.2216797.3676758-4.3759766-.7866211-.390625-.3896484-1.0234375-.3896484-1.4140625 0-.1894531.1889649-.2929687.4399414-.2929687.7070313s.1035156.5180664.2929688.706543c1.1542969 1.1547852 1.4628906 2.8720703.7871094 4.3754883-.0839844.1879883-.1640625.3808594-.2382813.5756836-.5703125 1.5151367-2.0371094 2.5346679-3.6494141 2.5346679-.5517578 0-1 .4487305-1 1s.4482422 1 1 1c1.6123047 0 3.0791016 1.0195313 3.6503906 2.5375977.0732422.1918945.1533203.3847656.2373047.5742188.6757813 1.5019531.3671875 3.2192383-.7871094 4.3735352-.1894531.1889648-.2929688.4399414-.2929688.7070313s.1035156.5180664.2929688.706543c.390625.390625 1.0234375.3901367 1.4140625.0004883.7480469-.7480471 1.7324219-1.1411135 2.741211-1.1411135zm5.7441406-2.7583008c-3.3085938 0-6-2.6914063-6-6s2.6914063-6 6-6 6 2.6914063 6 6-2.6914062 6-6 6zm0-10c-2.2060547 0-4 1.7944336-4 4s1.7939453 4 4 4 4-1.7944336 4-4-1.7939453-4-4-4z"></path>
+          </g>
+        </svg>
+        <span class="navItem__text">Settings</span>
+      </a>
+      <a href="" class="navItem">
+        <svg xmlns="http://www.w3.org/2000/svg" id="fi_3031145" viewBox="0 0 24 24" width="512" height="512">
+          <path d="M12,23a2,2,0,0,0,2-2H10A2,2,0,0,0,12,23Z"></path>
+          <path d="M20.924,18.383a1,1,0,0,0-.217-1.09L19,15.586V10a7,7,0,0,0-6-6.92V2a1,1,0,0,0-2,0V3.08A7,7,0,0,0,5,10v5.586L3.293,17.293A1,1,0,0,0,4,19H20A1,1,0,0,0,20.924,18.383ZM6.414,17l.293-.293A1,1,0,0,0,7,16V10a5,5,0,0,1,10,0v6a1,1,0,0,0,.293.707l.293.293Z"></path>
+        </svg>
+        <span class="navItem__text">Notification</span>
+      </a>
+      <a href="" class="navItem">
+        <svg id="fi_3031121" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg">
+          <path d="m3.515 22.875a1 1 0 0 0 1.015-.027l7.47-4.669 7.47 4.669a1 1 0 0 0 1.53-.848v-18a3 3 0 0 0 -3-3h-12a3 3 0 0 0 -3 3v18a1 1 0 0 0 .515.875zm1.485-18.875a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v16.2l-6.47-4.044a1 1 0 0 0 -1.06 0l-6.47 4.044z"></path>
+        </svg>
+        <span class="navItem__text">Bookmark </span>
+      </a>
+      <a href="" class="navItem">
+        <svg id="fi_3018436" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg">
+          <path d="m5.414 13h11.586a1 1 0 0 0 0-2h-11.586l2.293-2.293a1 1 0 1 0 -1.414-1.414l-4 4a.99.99 0 0 0 -.217.326 1 1 0 0 0 0 .764.99.99 0 0 0 .217.326l4 4a1 1 0 1 0 1.414-1.414z"></path>
+          <path d="m13 21a1 1 0 0 0 0 2h8a1 1 0 0 0 1-1v-20a1 1 0 0 0 -1-1h-8a1 1 0 0 0 0 2h7v18z"></path>
+        </svg>
+        <span class="navItem__text">Logout</span>
+      </a>
+    </nav>
+  </div>
+  
+  <footer>
+    <div class="copyright">
+     
+      <a target="_blank" href="https://www.frontendplanet.com/"></a>
+    </div>
+  </footer>

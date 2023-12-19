@@ -6,10 +6,6 @@ const Home1=()=>{
     return(
         <>
          <div id = "entire2">
-
-           <img></img>
-      {/*
-      <img src={logo} alt=""/>  */}
       <h1 id="title">CampusMate</h1>
 
       <h1>

@@ -2,8 +2,9 @@
 #entire2
 {
     margin-top: 0px;
+    margin-left:76px;
     background-repeat: no-repeat;
-    background-image: url(C:\Users\senth\OneDrive\Documents\GitHub\React_IRC\Project\sims\src\assets\images\bg10.jpg);
+    background-image: url(C:\Users\senth\OneDrive\Documents\GitHub\React_IRC\Project\sims\src\assets\images\bg11.jpg);
     background-size: cover;
     height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -14,9 +15,12 @@ li{
     text-decoration: none;
 }
 .topnav {
+  margin-left: 70px;
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-    background-color: #ef8533;
+    background-color:#bb00fd;
+     /* #ef8533; */
     width:100%;
+    height: 75px;
     overflow: hidden;
   }
   
@@ -32,7 +36,7 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
   }
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #c26c21;
+    background-color: #a32fd8;
     color: rgb(244, 241, 241);
   }
   
@@ -50,10 +54,10 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
     font-size: 1cm;
     font-style: italic;
     text-shadow:
-4.5px 4.5px 3.6px rgba(238, 163, 13, 0.712),
-12.5px 1.5px 10px rgba(221, 113, 12, 0.81),
-30.1px 30.1px 24.1px rgba(215, 181, 27, 0.83),
-100px 100px 80px rgba(247, 21, 21, 0.23)
+4.5px 4.5px 3.6px rgba(98, 6, 212, 0.712),
+12.5px 1.5px 10px rgba(15, 34, 209, 0.81),
+30.1px 30.1px 24.1px rgba(92, 2, 210, 0.83),
+100px 100px 80px rgba(213, 198, 198, 0.23)
 ;
   }
   #title{
@@ -66,11 +70,13 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
   }
   
   .container {
+    margin-top: 50px;
     display: flex;
-    background: #FDC830;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    /* background: #FDC83u0;  fallback for old browsers */
+    background: #9D50BB;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6E48AA, #9D50BB);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6E48AA, #9D50BB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     /* background-color: rgb(216, 162, 12); */
     justify-content: center;
   }
@@ -88,11 +94,11 @@ background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, F
     transform: scale(1);
     transition-duration:0.4s ;
     background-color: white;
-    color: orange;
+    color: rgb(104, 50, 174);
     margin: 7px; 
     padding: 10px; 
     font-size: 30px;
-    border: 3px solid rgb(222, 142, 43);
+    border: 3px solid rgb(21, 53, 168);
     border-radius: 20px;
     opacity:1;
     font-style: italic;

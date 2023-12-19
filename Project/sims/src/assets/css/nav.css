@@ -5,7 +5,8 @@ li{
 }
 .topnav {
 
-    background-color: #ef8533;
+    background-color:#bb00fd;
+     /* #ef8533; */
     width:100%;
     overflow: hidden;
   }
@@ -22,7 +23,7 @@ li{
   }
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #c26c21;
+    background-color: #c56ee4;
     color: rgb(244, 241, 241);
   }
   

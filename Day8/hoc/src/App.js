@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
  
 // toast-configuration method,
 // it is compulsory method.
-toast.configure();
+// toast.configure();
  
 // This is main function
 function GeeksforGeeks() {
@@ -16,6 +16,7 @@ function GeeksforGeeks() {
     // button is clicked
     const notify = () => {
         // Calling toast method by passing string
+        
         toast("Hello Geeks");
     };
     return (
