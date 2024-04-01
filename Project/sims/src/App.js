@@ -1,5 +1,5 @@
 import './assets/css/style.css'
-// import Navbar from "./components/navbar.js";
+import Navbar from "./components/navbar.js";
 import Home1 from "./pages/Home1.js"
 import Register from './pages/Register.js';
 import Login from './pages/Login.js';
@@ -8,7 +8,7 @@ import Login from './pages/Login.js';
 // import logo from './assets/css/logo.png';
 import { Route, Routes } from 'react-router-dom';
 import SidePanel from './components/sidepanel.js';
-import Navbar from './components/navbar.js';
+// import Navbar from './components/navbar.js';
 // import Register from './pages/Login.js';
 function App() {
   return (

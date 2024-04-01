@@ -4,7 +4,8 @@
     margin-top: 0px;
     margin-left:76px;
     background-repeat: no-repeat;
-    background-image: url(C:\Users\senth\OneDrive\Documents\GitHub\React_IRC\Project\sims\src\assets\images\bg11.jpg);
+    background-image: url('C:/Users/SURENDER K M/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/images/bg11.jpg');
+    /* C:\Users\SURENDER K M\OneDrive\Documents\GitHub\React_IRC\Project\sims\src\assets\images\bg11.jpg */
     background-size: cover;
     height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

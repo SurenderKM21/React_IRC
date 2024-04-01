@@ -1,10 +1,9 @@
 import React,{ useState } from 'react'
-import Loginimg from 'C:/Users/senth/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/images/Login.jpg';
+import Loginimg from 'C:/Users/SURENDER K M/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/images/Login.jpg';
 import { useNavigate } from 'react-router-dom'
-import 'C:/Users/senth/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/css/login.css'
+import 'C:/Users/SURENDER K M/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/css/login.css'
 import Login1 from '../assets/images/Login2.jpg';
-import Login2 from '../assets/images/Login4.jpg';
-import Login3 from '../assets/images/Login3.jpg';
+
 const   Login = () =>{
   
 		const inputs = document.querySelectorAll(".input-field");
@@ -29,24 +28,7 @@ const   Login = () =>{
 	  });
 	});
 	
-	function moveSlider() {
-	  let index = this.dataset.value;
-	
-	  let currentImage = document.querySelector(`.img-${index}`);
-	  images.forEach((img) => img.classList.remove("show"));
-	  currentImage.classList.add("show");
-	
-	  const textSlider = document.querySelector(".text-group");
-	  textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
-	
-	  bullets.forEach((bull) => bull.classList.remove("active"));
-	  this.classList.add("active");
-	}
-	
-	bullets.forEach((bullet) => {
-	  bullet.addEventListener("click", moveSlider);
-	});
-	  
+
     const navigate = useNavigate();
     const Hom=()=>
     {
@@ -66,7 +48,7 @@ return(
 
               <div class="heading">
                 <h2>Welcome Back</h2>
-                <h6>Not registred yet?</h6>
+                <h6>Not registered yet?</h6>
                 <a href="#" class="toggle">Sign up</a>
               </div>
 
@@ -161,23 +143,23 @@ return(
           <div class="carousel">
             <div class="images-wrapper">
               <img src={Login1} class="image img-1 show" alt="abcd" />
-              <img src={Login2} class="image img-2" alt="imagenot found" />
-              <img src={Login3} class="image img-3" alt="hello" />
+              {/* <img src={Login2} class="image img-2" alt="imagenot found" />
+              <img src={Login3} class="image img-3" alt="hello" /> */}
             </div>
 
             <div class="text-slider">
               <div class="text-wrap">
                 <div class="text-group">
                   <h2>Create your own courses</h2>
-                  <h2>Customize as you like</h2>
-                  <h2>Invite students to your class</h2>
+                  {/* <h2>Customize as you like</h2>
+                  <h2>Invite students to your class</h2> */}
                 </div>
               </div>
 
               <div class="bullets">
                 <span class="active" data-value="1"></span>
-                <span data-value="2"></span>
-                <span data-value="3"></span>
+                {/* <span data-value="2"></span>
+                <span data-value="3"></span> */}
               </div>
             </div>
           </div>
@@ -205,7 +187,8 @@ return(
 
 
 
-  {/* <div id="entire" >
+  
+    /* <div id="entire" >
 <img src={Loginimg} alt="Logo"></img>
   <form onSubmit={Hom}>
 <div id="wrap">
@@ -224,4 +207,4 @@ return(
   
 </div>
 </form>        
-</div>  */}
+</div>  */

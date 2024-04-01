@@ -1,5 +1,6 @@
 import React from 'react';
-import 'C:/Users/senth/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/css/sidepanel.css';
+import 'C:/Users/SURENDER K M/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/sidepanel.css';
+
 const SidePanel=()=>
 {
     return(
@@ -7,7 +8,7 @@ const SidePanel=()=>
         
   <div class="sidebar_menu">
 
-{/* <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> */}
+
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
     
     <div class="Logo">

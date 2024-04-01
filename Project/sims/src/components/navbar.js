@@ -1,4 +1,4 @@
-import 'C:/Users/senth/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/css/style.css'
+import 'C:/Users/SURENDER K M/OneDrive/Documents/GitHub/React_IRC/Project/sims/src/assets/css/style.css'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
