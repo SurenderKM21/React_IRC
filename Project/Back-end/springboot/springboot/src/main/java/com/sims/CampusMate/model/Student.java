@@ -1,6 +1,7 @@
 package com.sims.CampusMate.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Student {
@@ -11,6 +12,29 @@ public class Student {
     private String email;
     private String userName;
     private String password;
+
+    
+    @OneToOne(mappedBy = "student",cascade = CascadeType.ALL ,fetch=FetchType.LAZY)
+    @JoinColumn(name = "id")
+    @JsonManagedReference
+    private Address address; // One-to-One Relationship
+    
+    public Student(int id, String firstName, String lastName, String email, String userName, String password,
+            Address address) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.userName = userName;
+        this.password = password;
+        this.address = address;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public void setAddress(Address address) {
+        this.address = address;
+    }
     
     public int getId() {
         return id;
